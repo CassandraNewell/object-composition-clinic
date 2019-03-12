@@ -1,6 +1,4 @@
 class Jukebox
-  attr_accessor :available_songs, :requested_songs
-
   AVAILABLE_SONGS = [
     "Hello - Lionel Ritchie",
     "Kokomo – The Beach Boys",
@@ -19,12 +17,14 @@ class Jukebox
   ]
 
   def initialize(requested_songs)
-    @requested_songs = []
-    requested_songs.each do |song|
-      if AVAILABLE_SONGS.include?(song)
-        @requested_songs.push(song)
-      end
+    # Your code here
+  end
+
+  def add_track!(new_track)
+    if AVAILABLE_SONGS.include?(new_track)
+      @requested_songs.push(new_track)
     end
+    AVAILABLE_SONGS.include?(new_track)
   end
 
   def shuffle!
@@ -33,12 +33,5 @@ class Jukebox
 
   def play!
     @requested_songs.shift
-  end
-
-  def add_track!(new_track)
-    if AVAILABLE_SONGS.include?(new_track)
-      @requested_songs.push(new_track)
-    end
-    AVAILABLE_SONGS.include?(new_track)
   end
 end
