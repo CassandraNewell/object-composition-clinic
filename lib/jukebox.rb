@@ -15,4 +15,8 @@ class Jukebox
     puts "Now playing #{current_song} 🎶"
     @requested_songs.push(current_song)
   end
+
+  def list_songs
+    @requested_songs.join("\n")
+  end
 end

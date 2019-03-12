@@ -23,12 +23,12 @@ requested_songs = [
 jukebox = Jukebox.new(requested_songs, available_songs)
 
 puts "\nOriginal playlist:"
-puts jukebox.requested_songs
+puts jukebox.list_songs
 
 jukebox.add_track!("Nothing's Gonna Stop Us Now - Starship")
 
 puts "\nNew playlist:"
-puts jukebox.requested_songs
+puts jukebox.list_songs
 
 jukebox.play!
 jukebox.play!
