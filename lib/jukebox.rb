@@ -1,6 +1,12 @@
 class Jukebox
+  attr_reader :requested_songs
+
   def initialize(requested_songs, available_songs)
-    # Your code here
+    @available_songs = available_songs
+    @requested_songs = []
+    requested_songs.each do |song|
+      add_track!(song)
+    end
   end
 
   def add_track!(new_track)
@@ -12,11 +18,7 @@ class Jukebox
 
   def play!
     current_song = @requested_songs.shift
-    puts "Now playing #{current_song} 🎶"
+    current_song.play!
     @requested_songs.push(current_song)
-  end
-
-  def list_songs
-    @requested_songs.join("\n")
   end
 end
