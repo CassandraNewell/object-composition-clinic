@@ -1,37 +1,18 @@
 class Jukebox
-  AVAILABLE_SONGS = [
-    "Hello - Lionel Ritchie",
-    "Kokomo – The Beach Boys",
-    "Girl You Know It’s True – Milli Vanilli",
-    "Agadoo – Black Lace",
-    "Down Under - Men at Work",
-    "Nothing's Gonna Stop Us Now - Starship",
-    "Get Outta My Dreams, Get Into My Car - Billy Ocean",
-    "I Just Called To Say I Love You - Stevie Wonder",
-    "Hangin' Tough - New Kids on the Block",
-    "We Built This City - Starship",
-    "Wake Me Up Before You Go Go - Wham!",
-    "We Didn't Start The Fire - Billy Joel",
-    "I Wanna Dance With Somebody - Whitney Houston",
-    "U Can't Touch This - MC Hammer"
-  ]
-
-  def initialize(requested_songs)
+  def initialize(requested_songs, available_songs)
     # Your code here
   end
 
   def add_track!(new_track)
-    if AVAILABLE_SONGS.include?(new_track)
+    if @available_songs.include?(new_track)
       @requested_songs.push(new_track)
     end
-    AVAILABLE_SONGS.include?(new_track)
-  end
-
-  def shuffle!
-    @requested_songs.shuffle!
+    @available_songs.include?(new_track)
   end
 
   def play!
-    @requested_songs.shift
+    current_song = @requested_songs.shift
+    puts "Now playing #{current_song} 🎶"
+    @requested_songs.push(current_song)
   end
 end
