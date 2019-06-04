@@ -19,18 +19,3 @@ requested_songs = [
   "Wake Me Up Before You Go Go - Wham!",
   "She Don't Love Me Anymore - The Aliens"
 ]
-
-jukebox = Jukebox.new(requested_songs, available_songs)
-
-puts "\nOriginal playlist:"
-puts jukebox.list_songs
-
-jukebox.add_track!("Nothing's Gonna Stop Us Now - Starship")
-
-puts "\nNew playlist:"
-puts jukebox.list_songs
-
-jukebox.play!
-jukebox.play!
-jukebox.play!
-jukebox.play!
