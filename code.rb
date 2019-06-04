@@ -8,23 +8,23 @@ song3 = Song.new("Hello", "Lionel Ritchie")
 song4 = Song.new("Kokomo", "The Beach Boys")
 song5 = Song.new("Nothing's Gonna Stop Us Now", "Starship")
 
-available_songs = [song1, song3, song4, song5]
+library = [song1, song3, song4, song5]
 
 requested_songs = [song1, song2]
 
-jukebox = Jukebox.new(available_songs, requested_songs)
+jukebox = Jukebox.new(library, requested_songs)
 
 
 puts "\nOriginal Playlist"
 
-jukebox.requested_songs.each do |song|
+jukebox.playlist.each do |song|
   puts song.song_name
 end
 
 jukebox.add_track!(song5)
 
 puts "\nNew Playlist"
-jukebox.requested_songs.each do |song|
+jukebox.playlist.each do |song|
   puts song.song_name
 end
 
