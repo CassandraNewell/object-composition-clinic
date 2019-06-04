@@ -18,8 +18,14 @@ class Jukebox
   end
 
   def play!
-    current_song = @requested_songs.shift
-    puts "Now Playing: #{current_song}"
-    @requested_songs.push(current_song)
+    @requested_songs.each do |song|
+      song.play!
+    end
+
+  ## Plays just one song -- kinda redundant since we created a play! method for our Song class
+  #   current_song = @requested_songs.shift
+  #   current_song.play!
+  #   # puts "Now Playing: #{current_song.full_name}"
+  #   @requested_songs.push(current_song)
   end
 end

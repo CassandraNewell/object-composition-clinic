@@ -1,38 +1,32 @@
 require 'pry'
 require_relative './lib/jukebox'
+require_relative './lib/song'
 
-available_songs = [
-  "Hello - Lionel Ritchie",
-  "Kokomo – The Beach Boys",
-  "Girl You Know It’s True – Milli Vanilli",
-  "Agadoo – Black Lace",
-  "Down Under - Men at Work",
-  "Nothing's Gonna Stop Us Now - Starship",
-  "Get Outta My Dreams, Get Into My Car - Billy Ocean",
-  "I Just Called To Say I Love You - Stevie Wonder",
-  "Hangin' Tough - New Kids on the Block",
-  "We Built This City - Starship",
-  "Wake Me Up Before You Go Go - Wham!",
-  "We Didn't Start The Fire - Billy Joel",
-  "I Wanna Dance With Somebody - Whitney Houston",
-  "U Can't Touch This - MC Hammer"
-]
+song1 = Song.new("Wake Me Up Before You Go Go", "Wham!")
+song2 = Song.new("She Don't Love Me Anymore", "The Aliens")
+song3 = Song.new("Hello", "Lionel Ritchie")
+song4 = Song.new("Kokomo", "The Beach Boys")
+song5 = Song.new("Nothing's Gonna Stop Us Now", "Starship")
 
-requested_songs = [
-  "Wake Me Up Before You Go Go - Wham!",
-  "Nothing's Gonna Stop Us Now - Starship",
-  "She Don't Love Me Anymore - The Aliens"
-]
+available_songs = [song1, song3, song4, song5]
+
+requested_songs = [song1, song2]
 
 jukebox = Jukebox.new(available_songs, requested_songs)
 
-puts "\nOriginal Playlist"
-puts jukebox.requested_songs
 
-jukebox.add_track!("We Didn't Start The Fire - Billy Joel")
+puts "\nOriginal Playlist"
+
+jukebox.requested_songs.each do |song|
+  puts song.song_name
+end
+
+jukebox.add_track!(song5)
 
 puts "\nNew Playlist"
-puts jukebox.requested_songs
+jukebox.requested_songs.each do |song|
+  puts song.song_name
+end
 
 puts "\n\n\n"
 
@@ -41,5 +35,3 @@ jukebox.play!
 jukebox.play!
 jukebox.play!
 jukebox.play!
-
-# binding.pry
