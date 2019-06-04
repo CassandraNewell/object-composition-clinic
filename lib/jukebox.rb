@@ -1,22 +1,13 @@
 class Jukebox
-  def initialize(requested_songs, available_songs)
+  def initialize(available_songs, requested_songs)
     # Your code here
   end
 
   def add_track!(new_track)
-    if @available_songs.include?(new_track)
-      @requested_songs.push(new_track)
-    end
-    @available_songs.include?(new_track)
+    # Your code here
   end
 
   def play!
-    current_song = @requested_songs.shift
-    puts "Now playing #{current_song} 🎶"
-    @requested_songs.push(current_song)
-  end
-
-  def list_songs
-    @requested_songs.join("\n")
+    # Your code here
   end
 end
