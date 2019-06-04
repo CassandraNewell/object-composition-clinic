@@ -1,7 +1,7 @@
 require 'pry'
 require_relative './lib/jukebox'
 
-available_songs = [
+library = [
   "Hello - Lionel Ritchie",
   "Kokomo – The Beach Boys",
   "Girl You Know It’s True – Milli Vanilli",
@@ -24,15 +24,15 @@ requested_songs = [
   "She Don't Love Me Anymore - The Aliens"
 ]
 
-jukebox = Jukebox.new(available_songs, requested_songs)
+jukebox = Jukebox.new(library, requested_songs)
 
 puts "\nOriginal Playlist"
-puts jukebox.requested_songs
+puts jukebox.playlist
 
 jukebox.add_track!("We Didn't Start The Fire - Billy Joel")
 
 puts "\nNew Playlist"
-puts jukebox.requested_songs
+puts jukebox.playlist
 
 puts "\n\n\n"
 
@@ -41,5 +41,3 @@ jukebox.play!
 jukebox.play!
 jukebox.play!
 jukebox.play!
-
-# binding.pry
